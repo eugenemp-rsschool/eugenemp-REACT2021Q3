@@ -1,0 +1,108 @@
+.card {
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 400px;
+  }
+
+  position: relative;
+  overflow: hidden;
+  width: 280px;
+  height: 380px;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  background: linear-gradient(#cfcfcf, #efefef);
+  box-shadow: 0 2px 5px lightgray;
+
+  // Shared rules
+  &__image,
+  &__text,
+  &__btn__wrapper {
+    width: 100%;
+    padding: 0 5%;
+  }
+
+  // Card image
+  &__image {
+    height: 60%;
+    background-color: gray;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  // Card text
+  &__text {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  &__text__heading {
+    margin: 0;
+    color: #232323;
+  }
+
+  &__text__info {
+    font-size: 14px;
+  }
+
+  &__text__author {
+    font-size: 12px;
+    color: #989898;
+  }
+
+  // Social buttons
+  &__btn__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    border-top: 1px solid lightgray;
+  }
+
+  &__btn__like,
+  &__btn__repost,
+  &__btn__bookmark {
+    cursor: pointer;
+    width: 26px;
+    height: 26px;
+    border: 1px solid grey;
+    border-radius: 13px;
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__btn__like {
+    background-image: url(/assets/icons/icon-like-disabled.svg);
+
+    &:hover {
+      background-image: url(/assets/icons/icon-like-enabled.svg);
+      border-color: #dd3131;
+      box-shadow: 0 0 6px #dd3131;
+    }
+  }
+
+  &__btn__repost {
+    background-image: url(/assets/icons/icon-share-disabled.svg);
+
+    &:hover {
+      background-image: url(/assets/icons/icon-share-enabled.svg);
+      border-color: #005288;
+      box-shadow: 0 0 6px #005288;
+    }
+  }
+
+  &__btn__bookmark {
+    background-image: url(/assets/icons/icon-bmark-disabled.svg);
+
+    &:hover {
+      background-image: url(/assets/icons/icon-bmark-enabled.svg);
+      border-color: #d68b00;
+      box-shadow: 0 0 6px #d68b00;
+    }
+  }
+}
