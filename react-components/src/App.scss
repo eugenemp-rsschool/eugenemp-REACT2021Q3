@@ -1,0 +1,58 @@
+// App fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+// SCSS variables
+$-height-header: 60px;
+$-height-footer: 80px;
+
+// App component rules
+.app {
+  width: 100vw;
+  height: 100vh;
+
+  &__header,
+  &__main,
+  &__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  &__header {
+    height: $-height-header;
+    background-color: #25466d;
+  }
+
+  &__main {
+    height: calc(100% - #{$-height-header + $-height-footer});
+  }
+
+  &__footer {
+    justify-content: right;
+    height: $-height-footer;
+    background-color: #25466d;
+  }
+}
+
+// GitHub link rules
+.contacts {
+  &__gh {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 120px;
+    height: 32px;
+    background-image: url(/assets/icons/icon-gh.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    transition: filter 0.2s ease-in-out;
+
+    &:hover {
+      filter: drop-shadow(0 0 5px #ffffff);
+    }
+  }
+}
