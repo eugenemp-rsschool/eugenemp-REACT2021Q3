@@ -1,0 +1,252 @@
+@import '../../index';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  background-color: #eeebe2;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba($color: #000, $alpha: 0.3);
+
+  &__input-name__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__label {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10%;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  &__btn__wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__input,
+  &__btn,
+  &__error {
+    box-shadow: 0 0 8px rgba($color: #000, $alpha: 0.2);
+    font-family: 'Roboto', sans-serif;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0 5%;
+    border: 1px solid grey;
+
+    &:focus {
+      border: 2px solid #3a8ec5;
+    }
+  }
+
+  &__btn {
+    width: 40%;
+    border: none;
+  }
+
+  &__switcher__wrapper {
+    position: relative;
+  }
+
+  &__switcher__box {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 55px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: grey;
+    box-shadow: 0 0 8px rgba($color: #000, $alpha: 0.2);
+    transition: background-color 0.2s ease-in-out;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      background-color: #ffffff;
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+
+  &__switcher {
+    display: none;
+    width: 55px;
+    height: 30px;
+    border-radius: 15px;
+
+    &:checked + .form__switcher__box {
+      background-color: #2e6f9b;
+
+      &::after {
+        transform: translateX(25px);
+      }
+    }
+  }
+
+  &__error {
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 110%;
+    width: max-content;
+    height: max-content;
+    background-color: #a04d4d;
+    color: #dfdfdf;
+    transition: opacity 0.2s ease-in-out;
+  }
+}
+
+.form__checkbox {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-submit {
+  pointer-events: none;
+  background-color: grey;
+  color: #dfdfdf;
+
+  &_active {
+    pointer-events: initial;
+    background-color: #2e6f9b;
+
+    &:hover {
+      background-color: #3a8ec5;
+    }
+  }
+}
+
+.btn-reset {
+  background-color: #a04d4d;
+  color: #dfdfdf;
+
+  &:hover {
+    background-color: #ce6565;
+  }
+}
+
+@media screen and (max-width: #{$bp-mobile}) {
+  .form {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+
+    &__input,
+    &__btn {
+      height: 18px;
+      border-radius: 9px;
+      font-size: 12px;
+    }
+
+    &__input {
+      border-radius: 4px;
+    }
+
+    &__error {
+      height: 16px;
+      padding: 0 8px;
+      border-radius: 8px;
+      font-size: 12px;
+    }
+  }
+}
+
+@media screen and (min-width: #{$bp-mobile + 1}) and (max-width: #{$bp-tablet - 1px}) {
+  .form {
+    width: 90%;
+    max-width: 360px;
+    padding: 40px 30px;
+
+    &__input,
+    &__btn {
+      height: 40px;
+      border-radius: 20px;
+      font-size: 16px;
+    }
+
+    &__input {
+      border-radius: 8px;
+    }
+
+    &__error {
+      height: 20px;
+      padding: 0 10px;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (min-width: #{$bp-tablet}) and (max-width: #{$bp-desktop-hdrdy - 1px}) {
+  .form {
+    width: 360px;
+    padding: 40px 30px;
+
+    &__input,
+    &__btn {
+      height: 40px;
+      border-radius: 20px;
+      font-size: 16px;
+    }
+
+    &__input {
+      border-radius: 8px;
+    }
+
+    &__error {
+      height: 26px;
+      padding: 0 13px;
+      border-radius: 13px;
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (min-width: #{$bp-desktop-hdrdy}) {
+  .form {
+    width: 420px;
+    padding: 50px 40px;
+
+    &__input,
+    &__btn {
+      height: 50px;
+      border-radius: 25px;
+      font-size: 18px;
+    }
+
+    &__input {
+      border-radius: 8px;
+    }
+
+    &__error {
+      height: 30px;
+      padding: 0 15px;
+      border-radius: 15px;
+      font-size: 18px;
+    }
+  }
+}
