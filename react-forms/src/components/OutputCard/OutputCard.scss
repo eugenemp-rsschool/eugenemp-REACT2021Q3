@@ -1,0 +1,109 @@
+@import '../../index';
+
+.output__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: center;
+  opacity: 0;
+  position: relative;
+  padding: 20px 40px;
+  background: linear-gradient(25deg, rgb(30, 40, 60) 20%,  rgb(20, 25, 45) 80%);
+  border: #383838;
+  box-shadow: #232323;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba($color: #000, $alpha: 0.3);
+  font-family: 'Roboto';
+  color: #cfcfcf;
+  transition: opacity 0.3s ease-in-out;
+
+  &__btn {
+    position: absolute;
+    background-color: #a04d4d;
+    border-radius: 50%;
+    font-size: 0;
+
+    &:hover {
+      background-color: #ce6565;
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 20%;
+  }
+
+  &__name {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (min-width: #{$bp-mobile}) and (max-width: #{$bp-tablet - 1px}) {
+  .output__card {
+    min-width: 360px;
+    min-height: 200px;
+
+    &__btn {
+      top: 8px;
+      right: 8px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: #{$bp-tablet}) and (max-width: #{$bp-desktop - 1px}) {
+  .output__card {
+    min-width: 360px;
+    min-height: 200px;
+
+    &__btn {
+      top: 8px;
+      right: 8px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: #{$bp-desktop}) and (max-width: #{$bp-desktop-hdrdy - 1px}) {
+  .output__card {
+    min-width: 360px;
+    min-height: 200px;
+
+    &__btn {
+      top: 8px;
+      right: 8px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: #{$bp-desktop-hdrdy}) and (max-width: #{$bp-desktop-fhd - 1px}) {
+  .output__card {
+    min-width: 360px;
+    min-height: 200px;
+
+    &__btn {
+      top: 8px;
+      right: 8px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: #{$bp-desktop-fhd}) {
+  .output__card {
+    min-width: 360px;
+    min-height: 200px;
+
+    &__btn {
+      top: 8px;
+      right: 8px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
